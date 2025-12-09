@@ -1,0 +1,17 @@
+[project]
+name = "test-paths-with-spaces-workspace"
+version = "0.1.0"
+description = "UV workspace to test path handling with spaces"
+requires-python = ">=3.10"
+
+[tool.uv.workspace]
+members = [
+    "path with spaces/project"
+]
+[tool.uv.sources]
+test-path-with-spaces = { workspace = true }
+
+# This workspace tests path handling issues:
+# - Paths containing spaces in directory names
+# - Proper escaping and quoting of paths
+# - File system operations with non-standard characters
